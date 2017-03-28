@@ -1,0 +1,167 @@
+html{
+	font-size: 62.5%;
+	font-family: "微软雅黑";
+}
+body{
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+.pro{
+	width: 10rem;
+	height: 1rem;
+	border-radius: 0.8rem;
+	background: #ccc;
+	position: relative;
+	display: inline-block;
+}
+.pro-bar{
+	width: 60px;
+	height: 100%;
+	border-radius: 8px 0 0 8px;
+	background: #3ca0d0;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.item{
+	padding: 10rem 0;
+	background: #33CC99;
+	border-bottom: 1px solid #eee;
+}
+.title{
+	font-size: 4.8rem;
+	color: #666;
+	text-align: center;
+}
+
+.introduce h2,.introduce p{
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+.introduce img{
+	width: 16rem;
+	height: 16rem;
+	border-radius: 8rem;
+	border: none;
+	display: block;
+	margin: 0 auto;
+}
+.introduce h2{
+	text-shadow: 1px 2px #22c3aa,2px 4px #aee2d9;;
+	word-spacing: 1rem;
+	line-height: 4.8rem;
+	font-size: 4.8rem;
+	color: #fff;
+	margin: 1rem 0;
+}
+.introduce p{
+	font-size: 2.6rem;
+	color: #444;
+	line-height: 3.2rem;
+	font-weight: bold;
+}
+
+.education{
+	
+}
+.education h3,.education p{
+	color: #fff;
+	text-align: center;
+}
+.education h3{
+	font-size: 3.6rem;
+}
+.education p{
+	font-size: 3rem;
+}
+
+/*技能*/
+.skills{
+	padding: 2rem 0;
+}
+.skills ul{
+	width: 100%;
+    margin: 2rem 0;
+    padding: 0 3rem;
+}
+.skills li{
+	width: 40%;
+	color: #fff;
+	margin-bottom: 1rem;
+	float: left;
+	text-align: center;
+}
+.skills li strong{
+	width: 8rem;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.6rem;
+	font-weight: bold;
+}
+@media screen and (max-width: 30rem){
+	.skills ul{
+		padding: 0;
+	}
+	.skills li{
+		width: 60%;
+		float: none;
+		margin: 1rem auto;
+	}
+}
+
+/*联系我*/
+.contact{
+	padding: 4rem 0;
+}
+.contact ul{
+	width: 60%;
+	margin: 1rem auto;
+	text-align: center;
+}
+@media screen and (min-width: 50rem) {
+	/*大于480px时*/
+	.contact ul{
+		width: 30%;
+		margin: 3rem auto;
+		/*text-align: center;*/
+	}
+	
+}
+.contact li{
+	font-size: 2.2rem;
+	height: 3.2rem;
+	line-height: 5.2rem;
+	color: #777;
+	text-align: left;
+	padding-left: 3.6rem;
+	position: relative;
+}
+.contact li::before{
+	content: '';
+	display: block;
+	width: 30px;
+	height: 30px;
+	background: url('../img/icons.png') no-repeat;
+	position: absolute;
+	top: 1.2rem;
+	left: 0;
+}
+.contact .tel::before{
+	background-position: 0 -64px;
+}
+.contact .qq::before{
+	background-position: 0 -30px;
+}
+.contact .email::before{
+	background-position: 0 0;
+}

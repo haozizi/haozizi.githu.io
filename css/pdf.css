@@ -1,0 +1,154 @@
+li{
+	list-style: none;
+}
+html{
+	font-size: 12px;
+	font-family: "微软雅黑";
+}
+body{
+	background: #ccc;
+}
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.pro{
+	width: 100px;
+	height: 10px;
+	border-radius: 8px;
+	background: #ccc;
+	position: relative;
+	display: inline-block;
+}
+.pro-bar{
+	width: 70%;
+	height: 100%;
+	border-radius: 8px 0 0 8px;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.container{
+	width: 794px;
+	height: 1120px;
+	margin: 0 auto;
+	background: #fff;
+}
+.left{
+	float: left;
+	width: 40%;
+	height: 100%;
+	background: #22c3aa;
+	position: relative;
+}
+.left .top{
+	padding-top: 200px;
+	text-align: center;
+	color: #fff;
+}
+.top img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+}
+.top h2{
+	font-size: 36px;
+	margin: 10px 0 20px 0;
+}
+.top p{
+	font-size: 16px;
+}
+.top p strong{
+	color: #666;
+	font-weight: bold;
+}
+.skills{
+	margin-top: 20px;
+}
+.skills ul{
+	width: 80%;
+    margin: 60px auto;
+}
+.skills li{
+	color: #fff;
+	margin-bottom: 10px;
+}
+.skills li strong{
+	width: 100px;
+	text-align: right;
+	display: inline-block;
+	font-weight: bold;
+}
+.contact{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 100px;
+}
+.contact ul{
+	width: 60%;
+	margin: 0 auto;
+}
+.contact li{
+	font-size: 14px;
+	padding-left: 20px;
+	line-height: 28px;
+	color: #777;
+}
+.contact li img{
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	position: relative;
+	top: 8px;
+	left: -8px;
+}
+.contact .tel{}
+.contact .email{}
+.contact .homepager{}
+
+.right{
+	float: left;
+	width: 60%;
+	height: 100%;
+	background: #f1eee8;
+	padding: 30px 20px 0 20px;
+	box-sizing: border-box;
+}
+.right .item{
+	margin-bottom: 20px;
+}
+.item h2{
+	font-size: 24px;
+	color: #222;
+	font-weight: bold;
+}
+.item h3{
+	font-size: 16px;
+	color: #22c3aa;
+	font-weight: bold;
+	margin: 10px 0;
+}
+.item .time{
+	color: #5c7d7b;
+}
+.item p{
+	line-height: 20px;
+	color: #666;
+}
+.right .education{
+
+}
+.education h2{
+
+}
+.education h3{
+
+}

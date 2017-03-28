@@ -1,7 +1,8 @@
 $(document).ready(function(){
 	aniIntroduce();
+	initSkill();
 	mouseScroll();
-	// var isSkillShow = false;
+	var isSkillShow = false;
 	var currentItem = 0;
 
 
@@ -19,6 +20,7 @@ function mouseScroll(){
 		});
 		$(this).click(function(){
 			setPointer(i);
+			console.log('点击第'+i+'个');
 			showItem2(i);
 		});
 	});
@@ -57,25 +59,34 @@ function mouseScroll(){
 	});
 }
 
+//以设置opacit的方式切换页面。。感觉对眼睛不是很友好
 function showItem(index){
 	var items = $('.item');
-	if (index==0) {
-		$(items[items.length-1]).animate({'opacity':0},1000);//隐藏页面
-	}
-	if (index==1) {//这样写每次都会重新再添加一个canvas,怎么办呢...添加前删除掉。。
+	items.hide();
+	$(items[index]).show();
+	if (index==1 && !isSkillShow) {
 	    initSkill();
+	    isSkillShow = true;
 	}
-	items.css('z-index',1);
-	$(items[index-1]).animate({'opacity':0},1000);//隐藏页面
-	$(items[index]).css('z-index',99).animate({'opacity':1},1000);//显示页面
+	// if (index==0) {
+	// 	$(items[items.length-1]).animate({'opacity':0},1000);//隐藏页面
+	// }
+	// if (index==1) {//这样写每次都会重新再添加一个canvas,怎么办呢...添加前删除掉。。
+	//     initSkill();
+	// }
+	// items.css('z-index',1);
+	// $(items[index-1]).animate({'opacity':0},1000);//隐藏页面
+	// $(items[index]).css('z-index',99).animate({'opacity':1},1000);//显示页面
 }
 
+//以css3属性transform:translate3d(x,y,z)拉起页面
+//突然想起我都已经设置每一个页面为absolute了，直接设置top值拉起？？？
 function showItem2(index){
-	if (index==currentItem) {return;}//在已经是当前页面时点击圆点时不处理
+	if (index==currentItem) { console.log('点击自己，不处理'); return;}//在已经是当前页面时点击圆点时不处理
 	var items = $('.item');
-	if (index==1) {
+	if (index==1 && !isSkillShow) {
 	    initSkill();
-	    // isSkillShow = true;
+	    isSkillShow = true;
 	}
 	if (currentItem < index) {
 		slideItemUp(index);
@@ -87,18 +98,48 @@ function showItem2(index){
 
 //把页面向上拉
 function slideItemUp(index){
+	//越写越乱/(ㄒoㄒ)/~~
+	var cur = currentItem;
+	console.log("当前："+cur);
 	var items = $('.item');
 	var count = 0;
-	var timer = setInterval(function(){
-		count++;
-		if (count==100) {
-			clearInterval(timer);
-		}
-		$(items[index-1]).css('transform','translate3d(0,-'+count+'%,0)');
-	},10);
+	var length = index-currentItem;
+	if (length > 1) {
+		if (cur==0) {
+		//在第一个页面时点击超过或等于两页时，直接拉起中间的页面，然后再开启定时器拉起第一个页面
+			for (var i = cur+1; i <length; i++) {
+				console.log("hide item:"+i)
+				$(items[i]).css('transform','translate3d(0,-100%,0)');
+			}
+		}else{
+
+			for (var i = cur; i <=length; i++) {
+				console.log("hide item:"+i)
+				$(items[i]).css('transform','translate3d(0,-100%,0)');
+			}
+		}	
+		var timer = setInterval(function(){
+			count++;
+			if (count==100) {
+				clearInterval(timer);
+			}
+			if(count==2) console.log('正在拉第'+cur+'个');
+			$(items[cur]).css('transform','translate3d(0,-'+count+'%,0)');
+		},10);
+	}else{
+		var timer = setInterval(function(){
+			count++;
+			if (count==100) {
+				clearInterval(timer);
+			}
+			$(items[index-1]).css('transform','translate3d(0,-'+count+'%,0)');
+		},10);
+	}
+	
 }
 //把页面向下拉
 function slideItemDown(index){
+	var ide = index;
 	var items = $('.item');
 	var count = 100;
 	var timer = setInterval(function(){
@@ -107,6 +148,9 @@ function slideItemDown(index){
 			clearInterval(timer);
 			if (index==0) {
 				items.css('transform','translate3d(0,0,0)');
+			}
+			for (var i = ide+1; i < items.length; i++) {
+				$(items[i]).css('transform','translate3d(0,0,0)');
 			}
 		}
 		$(items[index]).css('transform','translate3d(0,-'+count+'%,0)');
@@ -128,11 +172,12 @@ function setPointer(index){
 function aniIntroduce(){
 	var childs = $(".introduce").children();
 	var pre = null;
-	var top = 0;
+	// var top = 0;
+	var hs = [100,300,370,410];
 	childs.each(function(i){
-		top = i==0 ? 100 : top+pre.height() + 20;
+		// top = i==0 ? 100 : top+pre.height() + 20;
 		$(this).animate({
-			top : top,
+			top : hs[i],
 			opacity : 1
 		},3000);
 		pre = $(this);
@@ -141,8 +186,8 @@ function aniIntroduce(){
 
 function initSkill(){
 	$('canvas').remove();
-	var ids = ['html','css','js','jq','bs','ps','vue'];
-	var values = [85,70,75,70,70,60,70];
+	var ids = ['html','css','js','jq','bs','ps','vue','java','php'];
+	var values = [90,80,75,70,70,60,70,65,60];
 	for (var i = ids.length - 1; i >= 0; i--) {
 		aniSkill(ids[i],values[i]);
 	}
@@ -163,6 +208,6 @@ function aniSkill(id,value){
     	if (count==value) {
     		clearInterval(timer);
     	}
-    },20);
+    },40);
 }
 });
