@@ -1,0 +1,56 @@
+/*
+样式重置
+*/
+body,h1,h2,h3,h4,h5,p,dd,dl,ul,ol,form,input,textarea,th,td,select{margin:0; padding: 0;}
+em{font-style: normal;}
+a{text-decoration:none;}
+ul,ol{list-style: none;}
+img{border:none;vertical-align: top;}
+table{border-collapse: collapse;} /*去掉间隙*/
+textarea{resize: none;overflow: auto;}
+input,textarea{outline: none;}
+body{font-family: "微软雅黑";font-size: 12px;}
+
+/*zoom:1一般用在IE6下.是为了触发元素的layout.
+常见的一个问题是.在IE6下.盒子设了边框后.边框在拉动滚动条时会出现断线的情况.....
+这时用给盒 子一个zoom:1就能解决问题了*/
+.clear{zoom:1;}
+.clear::after{content: '';display: block;clear: both;}
+.fl{float: left;}
+.fr{float: right;}
+
+.gradient{
+	background:-moz-linear-gradient(top, #FFFFFF, #f8f8f8);
+	background:-webkit-linear-gradient(top, #FFFFFF, #f8f8f8);
+	background:-ms-linear-gradient(top, #FFFFFF, #f8f8f8);
+	background:linear-gradient(top, #FFFFFF, #f8f8f8);
+	-ms-filter:"progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#FFFFFF, endColorstr=#f8f8f8)";
+	+background:#f9f9f9;
+}
+
+.triangle_up,.triangle_down,.triangle_down_gray{
+	width: 0;
+	height: 0;
+	border:4px solid;
+	cursor: pointer;
+}
+.triangle_up{
+	border-color: transparent transparent #cc0d13 transparent;
+}
+.triangle_down{
+	border-color: #cc0d13 transparent transparent  transparent;
+}
+.triangle_down_gray{
+	border-color: #c1c1c1 transparent transparent  transparent;
+}
+
+.point_2px::before{
+	content: '';
+	display: inline-block;
+	width: 2px;
+	height: 3px;
+	background: #d20f02;
+	position: relative;
+	top: -2px;
+	left: -6px;
+}

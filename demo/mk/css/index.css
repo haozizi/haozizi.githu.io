@@ -1,0 +1,268 @@
+body{
+	background: whitesmoke;
+}
+.header{
+	width: 100%;
+	height: 27px;
+	background: url("../img/top_bg.jpg");
+}
+.container{
+	width: 1000px;
+	margin: 0 auto;
+}
+.header ul{
+	
+}
+.header ul li{
+	float: right;
+	width: 70px;
+	line-height: 27px;
+	list-style-image: url('../img/li_bg.gif');
+	margin-left: 4px;
+}
+.header ul a{
+	color: #8e8e8e;
+} 
+
+.content{
+
+}
+.logo{
+	height: 80px;
+	background: #fff;
+}
+.logo strong{
+	color: #c00;
+	font-size: 22px;
+	position: relative;
+	top: 3px;
+}
+.logo p{
+	float: right;
+	color: #8e8e8e;
+	height: 80px;
+	line-height: 80px;
+	margin-right: 16px;
+	position: relative;
+}
+.logo p::before{
+	content:'';
+	display: block;
+	width: 28px;
+	height: 28px;
+	position: absolute;
+	background: url("../img/tel.jpg");
+	top: 30px;
+	left: -32px;
+}
+.nav{
+	height: 40px;
+	background: url(../img/nav_bg.jpg) repeat-x;
+	position: relative;
+	border-radius: 4px;
+}
+.nav ul{
+	height: 40px;
+}
+.nav li{
+	width: 100px;
+	float: left;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+}
+.nav li a{
+	font-size: 16px;
+	color: #fff;
+}
+.nav li a:hover{
+	color: yellow;
+}
+.nav input{
+	width: 190px;
+	height: 25px;
+	border: 1px solid #fff;
+	background: url("../img/search.jpg") no-repeat right center;
+	background-color: #fff;
+	position: absolute;
+	top: 6px;
+	right: 80px;
+}
+.ad{
+	height: 320px;
+	overflow: hidden;
+	margin-top: 5px;
+}
+#boxID{
+	height: 310px;
+	overflow: hidden;
+}
+.mF_luluJQ_wrap{
+	padding: 0;
+}
+
+/*通用title*/
+.title{
+	height: 35px;
+	line-height: 35px;
+	padding: 0 10px 0 20px;
+	color: #786F66;
+	font-family: "微软雅黑";
+	border-bottom: 2px solid #e8e8e8;
+	margin-bottom: 10px;
+}
+.title-left{
+	width: 70%;
+	float: left;
+	font-size: 14px;
+}
+.title-right{
+	width: 30%;
+	float: right;
+	text-align: right;
+}
+.title-right a{
+	color: #999;
+}
+
+.main{
+	height: 250px;
+}
+.news,.courses,.media{
+	height: 250px;
+	float: left;
+	border: 1px solid #dadada;
+	margin-right: 6px;
+	display: inline;
+}
+.news{
+	
+}
+.news .con{
+	padding: 0 6px;
+}
+.top-news{
+	height: 80px;
+}
+.top-news img{
+	display: block;
+	float: left;
+	margin-right: 6px;
+}
+.top-news .text{
+	float: left;
+}
+.top-news .text h3{
+	color: #c00;
+	margin-bottom: 10px;
+}
+.top-news .text p{
+	line-height: 22px;
+}
+.top-news .text a{
+	color: #f00;
+}
+.con ul{
+	margin-top: 18px;
+}
+.con ul li{
+	width: 324px;
+	height: 23px;
+	line-height: 23px;
+	border-bottom: 1px dotted #8e8e8e;
+}
+.con li::before{
+	content: '';
+	display: inline-block;
+	width: 5px;
+	height: 15px;
+	background: url("../img/list.jpg") no-repeat;
+	position: relative;
+	top: 4px;
+}
+.con li a{
+	color: #000;
+	margin-right: 6px;
+}
+.con li a:hover{
+	color: #f00;
+}
+.con li span{
+	color: #aaa;
+	float: right;
+}
+.courses{
+	
+}
+.courses .co-show{
+	padding: 5px;
+	height: 120px;
+}
+.co-show img{
+	float: left;
+	margin-right: 4px;
+}
+.co-show h3{
+	color: #c00;
+	margin-bottom: 10px;
+}
+.co-show p{
+	width: 400px;
+	line-height: 20px;
+}
+.courses .type-list{
+	margin: 20px 10px 0 10px;
+	background: url("../img/product_type_bg.jpg") repeat-x;
+}
+.courses .type-list li{
+	float: left;
+	width: 100px;
+	line-height: 27px;
+	text-align: center;
+}
+
+.media{
+	margin: 0;
+	width: 226px;
+}
+.media .vedio{
+	width: 220px;
+	height: 140px;
+}
+.media img{
+	
+}
+
+.footer{
+	height: 200px;
+	background: #e8e8e8;
+	margin-top: 10px;
+}
+.footer h3{
+	font-size: 18px;
+	margin-top: 20px;
+}
+.footer ul{
+	width: 100%;
+}
+.footer ul li{
+	width: 200px;
+	text-align: center;
+	font-size: 14px;
+	line-height: 30px;
+	color: #999;
+	float: left;
+	background: url("../img/line.png") no-repeat right center;
+}
+.footer .last{
+	background: none;
+}
+.footer li a{
+	color: inherit;
+}
+.footer .inner-ul{
+	width: 200px;
+	height: 150px;
+}
+.footer .wechat::before{
+}

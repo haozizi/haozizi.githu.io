@@ -2,7 +2,7 @@ li{
 	list-style: none;
 }
 html{
-	font-size: 12px;
+	font-size: 14px;
 	font-family: "微软雅黑";
 }
 body{
@@ -59,7 +59,7 @@ body{
 	border-radius: 50px;
 }
 .top h2{
-	font-size: 36px;
+	font-size: 38px;
 	margin: 10px 0 20px 0;
 }
 .top p{
@@ -123,26 +123,54 @@ body{
 	box-sizing: border-box;
 }
 .right .item{
-	margin-bottom: 20px;
+	margin-top: 60px;
 }
 .item h2{
-	font-size: 24px;
+	font-size: 28px;
 	color: #222;
 	font-weight: bold;
+	margin-bottom: 10px;
 }
 .item h3{
-	font-size: 16px;
+	font-size: 18px;
 	color: #22c3aa;
 	font-weight: bold;
 	margin: 10px 0;
 }
-.item .time{
+.time{
+	font-size: 16px;
 	color: #5c7d7b;
+	font-weight: bold;
+	margin-bottom: 6px;
 }
 .item p{
 	line-height: 20px;
 	color: #666;
 }
+
+.exp-item{
+	margin-top: 20px;
+}
+.exp-item .time{
+	margin-right: 60px;
+}
+.pro-title a{
+	color: inherit;
+}
+.pro-title span{
+	float: right;
+}
+.pro-title span i{
+	display: inline-block;
+	height: 20px;
+	font-size: 12px;
+	line-height: 20px;
+	color: #fff;
+	background: #22c3aa;
+	padding: 0 6px;
+	margin-right: 6px;
+}
+
 .right .education{
 
 }
@@ -151,4 +179,7 @@ body{
 }
 .education h3{
 
+}
+.right .work-exp{
+	margin-top: 200px;
 }

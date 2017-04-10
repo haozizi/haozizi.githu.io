@@ -10,9 +10,18 @@ $(document).ready(function() {
         	
         }
     }else{
+        var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串  
+        //判断是否IE浏览器 
+        var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1;
+        //获取ie版本
+        var reIE = new RegExp("MSIE (\\d+\\.\\d+);");  
+        reIE.test(userAgent);  
+        var fIEVersion = parseFloat(RegExp["$1"]); 
+
     	aniIntroduce();
 	    initSkill();
 	    mouseScroll();
+        Carousel.init($(".pictureSlider"));
 	    var isSkillShow = false;
 	    var currentItem = 0;
     }
@@ -31,8 +40,12 @@ $(document).ready(function() {
             });
             $(this).click(function() {
                 setPointer(i);
-                console.log('点击第' + i + '个');
-                showItem2(i);
+                // console.log('点击第' + i + '个');
+                if (fIEVersion<11) {
+                    showItem(i);
+                }else{
+                    showItem2(i);
+                }
             });
         });
         var items = $('.item');
@@ -65,7 +78,12 @@ $(document).ready(function() {
                 index = 0;
                 return;
             }
-            showItem2(index);
+            //IE11以下不支持transform
+            if (fIEVersion<11) {
+                showItem(index);
+            }else{
+                showItem2(index);
+            }
             setPointer(index);
             endTime = (new Date()).getTime()
         });
@@ -74,21 +92,22 @@ $(document).ready(function() {
     //以设置opacit的方式切换页面。。感觉对眼睛不是很友好
     function showItem(index) {
         var items = $('.item');
-        items.hide();
-        $(items[index]).show();
-        if (index == 1 && !isSkillShow) {
+        if (index == 2 && !isSkillShow) {
             initSkill();
             isSkillShow = true;
         }
-        // if (index==0) {
-        // 	$(items[items.length-1]).animate({'opacity':0},1000);//隐藏页面
-        // }
-        // if (index==1) {//这样写每次都会重新再添加一个canvas,怎么办呢...添加前删除掉。。
+        if (index==0) {
+        	$(items[items.length-1]).animate({'opacity':0},1000);//隐藏页面
+        }
+        // if (index==2) {//这样写每次都会重新再添加一个canvas,怎么办呢...添加前删除掉。。
         //     initSkill();
         // }
-        // items.css('z-index',1);
-        // $(items[index-1]).animate({'opacity':0},1000);//隐藏页面
-        // $(items[index]).css('z-index',99).animate({'opacity':1},1000);//显示页面
+        items.css('z-index',1);
+        console.log("隐藏第"+(index-1));
+        $(items[index-1]).animate({'opacity':0},1000);//隐藏页面
+         console.log("显示第"+index);
+        $(items[index]).css('z-index',99).animate({'opacity':1},1000);//显示页面
+        currentItem = index;
     }
 
     //以css3属性transform:translate3d(x,y,z)拉起页面
@@ -186,7 +205,7 @@ $(document).ready(function() {
         var childs = $(".introduce").children();
         var pre = null;
         // var top = 0;
-        var hs = [100, 300, 370, 410];
+        var hs = [100, 300, 370,420];
         childs.each(function(i) {
             // top = i==0 ? 100 : top+pre.height() + 20;
             $(this).animate({
