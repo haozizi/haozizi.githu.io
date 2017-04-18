@@ -66,7 +66,7 @@ body{
 	font-size: 16px;
 }
 .top p strong{
-	color: #666;
+	color: #fff;
 	font-weight: bold;
 }
 .skills{
@@ -100,7 +100,7 @@ body{
 	font-size: 14px;
 	padding-left: 20px;
 	line-height: 28px;
-	color: #777;
+	color: #fff;
 }
 .contact li img{
 	display: inline-block;
@@ -181,5 +181,5 @@ body{
 
 }
 .right .work-exp{
-	margin-top: 200px;
+	
 }
