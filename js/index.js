@@ -40,7 +40,7 @@ $(document).ready(function() {
             });
             $(this).click(function() {
                 setPointer(i);
-                // console.log('点击第' + i + '个');
+                console.log('点击第' + i + '个');
                 if (fIEVersion<11) {
                     showItem(i);
                 }else{
