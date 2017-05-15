@@ -77,6 +77,10 @@ a{
 	line-height: 3.2rem;
 	bottom: 6rem;
 	font-weight: bold;
+
+}
+.introduce .moto{
+	margin-left: 1rem;
 }
 .introduce .email{
 	font-size: 2rem;
