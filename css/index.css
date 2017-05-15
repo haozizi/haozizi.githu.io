@@ -150,12 +150,13 @@ a{
 	margin-right: 40px;
 }
 .exp-item p{
-	font-size: 20px;
+	font-size: 18px;
 }
 .exp-title a{
 	color: #444;
 	font-size: 24px;
-	border-bottom: 1px solid #666;
+	border-bottom: 1px solid #ccc;
+	color: #fff;
 }
 .exp-title span{
 	float: right;
