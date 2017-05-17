@@ -71,7 +71,7 @@ body{
 	height: 0.8rem;
 	border-radius: 6px 0 0 6px;
 	background-color: #fff;
-	animation: st 2s;
+	/*animation: st 2s;*/
 }
 @keyframes st{
 	0%{
